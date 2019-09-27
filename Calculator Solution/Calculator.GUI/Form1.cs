@@ -19,12 +19,26 @@ namespace Calculator.GUI
             InitializeComponent();
 
             button1.Text = "+";
+            button2.Text = "-";
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            int result = myCalculator.Add(int.Parse(textBox1.Text),int.Parse(textBox2.Text));
-            listBox1.Items.Add(result);
+            string op = button1.Text;
+            int x = int.Parse(textBox1.Text);
+            int y = int.Parse(textBox2.Text);
+            int result = myCalculator.Add(x, y);
+
+            listBox1.Items.Add(string.Format("{0} {3} {1} = {2}", x, y, result, op));
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            int x = int.Parse(textBox1.Text);
+            int y = int.Parse(textBox2.Text);
+            int result = myCalculator.Sub(x, y);
+
+            listBox1.Items.Add(string.Format("{0} - {1} = {2}", x, y, result));
         }
     }
 }

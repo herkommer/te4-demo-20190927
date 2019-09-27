@@ -21,6 +21,10 @@ namespace Calculator.GUI
             return number1 + number2;
         }
         //Subtract
+        public int Sub(int number1, int number2)
+        {
+            return number1 - number2;
+        }
         //Divide
         //Multiply
 
