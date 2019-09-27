@@ -22,7 +22,8 @@ namespace Calculator.CLI
             string op = Console.ReadLine();
 
             //Nu vill vi göra beräkningen och visa resultatet
-
+            Calculator.Component.Calculator MyCalculator = new Component.Calculator();
+            Console.WriteLine("{0} {1} {2} = {3}", x, op, y, MyCalculator.Add(x, y));
         }
     }
 }
