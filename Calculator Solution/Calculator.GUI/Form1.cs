@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Calculator.Component;
 
 namespace Calculator.GUI
 {
     public partial class Form1 : Form
     {
-        Calculator myCalculator = new Calculator();
+        Calculator.Component.Calculator myCalculator = new Calculator.Component.Calculator();
 
         public Form1()
         {
@@ -24,7 +25,7 @@ namespace Calculator.GUI
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            string op = button1.Text;
+            string op = ((Button)sender).Text;
             int x = int.Parse(textBox1.Text);
             int y = int.Parse(textBox2.Text);
             int result = myCalculator.Add(x, y);
@@ -38,7 +39,9 @@ namespace Calculator.GUI
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            string op = button2.Text;
+            Button b;
+            b = (Button)sender;
+            string op = b.Text;
             int x = int.Parse(textBox1.Text);
             int y = int.Parse(textBox2.Text);
             int result = myCalculator.Sub(x, y);

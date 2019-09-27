@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Calculator.GUI
+namespace Calculator.Component
 {
-    class Calculator
+    public class Calculator
     {
         //Detta objekt ska ansvara för beräkningarna
         //Vilka beräkningar?
